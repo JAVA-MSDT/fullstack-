@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AddContact from "./AddContact";
 import Contact from "./Contact";
 
 const Contacts = (props) => {
@@ -21,12 +22,14 @@ const Contacts = (props) => {
 
   return (
     <div>
-      {contacts.map((contact, index) => (
-        <Contact key={index} item={contact} />
-        /*       <div key={index}>
-            <h2>{index} {c.firstName}</h2>
-        </div> */
-      ))}
+      <div className="row">
+        <AddContact />
+      </div>
+      <div className="row">
+        {contacts.map((contact, index) => (
+          <Contact key={index} item={contact} />
+        ))}
+      </div>
     </div>
   );
 };
